@@ -1,0 +1,175 @@
+/* Quetzal — Encinitas pergola sequence as a build strip.
+   Sand, pergola wood, garden green, fire ember. No 01–05 fashion indexes. */
+
+:root {
+  --sand: #e6d7c0;
+  --paper: #f4ead8;
+  --wood: #6b4a2e;
+  --post: #8a6240;
+  --green: #3d5a3c;
+  --ember: #a3452a;
+  --sky: #8fa8b8;
+  --ink: #2a2218;
+  --mute: #5c5346;
+  --max: 1100px;
+  --pad: clamp(1rem, 3.4vw, 2.1rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--sand); }
+body {
+  margin: 0;
+  font-family: "Source Sans 3", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--sand);
+  line-height: 1.5;
+  font-size: 1.04rem;
+}
+a { color: inherit; }
+h1, h2 { font-family: "Source Sans 3", sans-serif; font-weight: 700; letter-spacing: -0.02em; margin: 0; }
+p { margin: 0; }
+.skip { position: absolute; left: 0.7rem; top: -3rem; background: var(--wood); color: var(--paper); padding: 0.4rem 0.7rem; }
+.skip:focus { top: 0.5rem; }
+
+.bar {
+  background: var(--wood);
+  color: var(--paper);
+  position: sticky; top: 0; z-index: 20;
+}
+.inner {
+  max-width: var(--max); margin: 0 auto; padding: 0.6rem var(--pad);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.wm { text-decoration: none; font-weight: 700; letter-spacing: 0.04em; }
+.wm span { display: block; font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #d9cbb4; }
+nav { display: flex; gap: 0.9rem; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+nav a { text-decoration: none; color: #d9cbb4; }
+nav a:hover { color: var(--paper); }
+.tools { display: flex; gap: 0.55rem; align-items: center; }
+.lang { display: flex; border: 1px solid #d9cbb4; }
+.lang button { background: transparent; color: #d9cbb4; border: 0; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.25rem 0.45rem; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--paper); color: var(--wood); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; border: 0; cursor: pointer;
+  font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.58rem 0.9rem; font-weight: 500;
+}
+.btn.wood { background: var(--post); color: var(--paper); }
+.btn.ember { background: var(--ember); color: var(--paper); }
+.btn.ghost { background: transparent; color: var(--wood); border: 1px solid var(--wood); }
+
+.hero { max-width: var(--max); margin: 0 auto; padding: 1.8rem var(--pad) 0.4rem; }
+.kicker {
+  font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ember);
+  margin-bottom: 0.45rem;
+}
+h1 { font-size: clamp(1.9rem, 4.8vw, 3rem); max-width: 18ch; }
+.lede { margin: 0.7rem 0 1rem; max-width: 54ch; color: var(--mute); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.strip {
+  max-width: none;
+  margin: 1.6rem 0 0;
+  padding: 1.6rem max(var(--pad), calc(50% - 550px));
+  background: var(--paper);
+  border-top: 8px solid var(--wood);
+  border-bottom: 8px solid var(--wood);
+}
+.strip h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0.2rem 0 0.5rem; }
+.beats {
+  list-style: none;
+  margin: 1.1rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.55rem;
+  counter-reset: none;
+}
+.beats li {
+  background: var(--sand);
+  border-top: 4px solid var(--green);
+  padding: 0.7rem 0.7rem 0.85rem;
+}
+.beats li:nth-child(4) { border-top-color: var(--ember); }
+.beats li:nth-child(5) { border-top-color: var(--wood); }
+.beats b {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin-bottom: 0.35rem;
+}
+.beats p { font-size: 0.9rem; }
+.pergola { margin: 0.4rem 0 0; }
+.pergola figcaption {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--mute);
+  padding: 0.4rem 0 0;
+}
+
+.services, .quote, .about, .ticket {
+  max-width: var(--max); margin: 0 auto; padding: 1.6rem var(--pad);
+}
+.services h2, .about h2, .ticket h2 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+.services ul {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;
+  list-style: none; margin: 0 0 0.8rem; padding: 0;
+}
+.services li {
+  background: var(--paper);
+  border-left: 4px solid var(--green);
+  padding: 0.7rem 0.8rem;
+  font-weight: 600;
+}
+.services li:nth-child(3) { border-left-color: var(--ember); }
+.svcMore { color: var(--mute); max-width: 60ch; }
+
+.quote blockquote {
+  margin: 0.4rem 0 0;
+  padding: 1rem 1.1rem;
+  background: var(--paper);
+  border-left: 5px solid var(--ember);
+  max-width: 64ch;
+}
+.quote footer { margin-top: 0.5rem; font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--ember); }
+
+.about address {
+  font-style: normal;
+  margin-top: 0.7rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88rem;
+  background: var(--paper);
+  padding: 0.8rem 0.9rem;
+  border-left: 4px solid var(--wood);
+}
+
+.ticket { background: var(--paper); max-width: none; padding-left: max(var(--pad), calc(50% - 550px)); padding-right: max(var(--pad), calc(50% - 550px)); }
+.ticket p { color: var(--mute); margin-bottom: 0.8rem; max-width: 52ch; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 1rem; }
+label { display: flex; flex-direction: column; gap: 0.25rem; }
+label span { font-family: "IBM Plex Mono", monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; }
+input, select, textarea { font: inherit; padding: 0.5rem 0.55rem; border: 1px solid var(--wood); background: #fffdf6; }
+.wide { grid-column: 1 / -1; }
+form .btn { justify-self: start; }
+.alt { margin-top: 0.8rem; }
+.alt a { color: var(--wood); }
+
+.foot {
+  max-width: var(--max); margin: 0 auto; padding: 1.3rem var(--pad) 2rem;
+  display: flex; justify-content: space-between; gap: 1rem; color: var(--mute); font-size: 0.88rem;
+}
+.foot b { display: block; color: var(--wood); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+.foot-links a { color: var(--ember); }
+
+@media (max-width: 820px) {
+  nav { display: none; }
+  .beats, .services ul, form { grid-template-columns: 1fr; }
+}

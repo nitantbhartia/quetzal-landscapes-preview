@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave a review · Quetzal Landscapes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .rev { max-width: 720px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
+    .card { background: var(--paper); border-left: 5px solid var(--ember); padding: 1.2rem; }
+    .card h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0.3rem 0 0.6rem; }
+    .honest { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--mute); border-top: 1px dashed var(--post); margin-top: 0.9rem; padding-top: 0.7rem; }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="inner">
+      <a class="wm" href="index.html">Quetzal <span>Landscapes</span></a>
+      <div class="tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn wood" href="index.html" data-i18n="back">Back to the strip</a>
+      </div>
+    </div>
+  </header>
+  <main class="rev">
+    <div class="card">
+      <p class="kicker" data-i18n="kicker">After the walkthrough</p>
+      <h1 data-i18n="h1">Ian H is on the original site. A Google URL is not.</h1>
+      <p data-i18n="lede">quetzallandscapes.com prints Ian H’s note naming Kris. It does not print a star count or a Google review link. This page will not invent either. Search the shop if the Encinitas pergola — or the walls, pavers, fire, kitchen — was yours.</p>
+      <ol>
+        <li data-i18n="s1">Search “Quetzal Landscapes San Diego 1082680”.</li>
+        <li data-i18n="s2">Match 7710 Balboa Ave #308 and 858-222-1454.</li>
+        <li data-i18n="s3">You can name Kris. Do not invent a last name — the original site does not print one.</li>
+      </ol>
+      <p class="honest" data-i18n="honest">No email is printed on the original contact block, so none is printed here. License #1082680 may be checked at CSLB.ca.gov.</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    I18N.en.back = "Back to the strip";
+    I18N.en.kicker = "After the walkthrough";
+    I18N.en.h1 = "Ian H is on the original site. A Google URL is not.";
+    I18N.en.lede = "quetzallandscapes.com prints Ian H’s note naming Kris. It does not print a star count or a Google review link. This page will not invent either. Search the shop if the Encinitas pergola — or the walls, pavers, fire, kitchen — was yours.";
+    I18N.en.s1 = "Search “Quetzal Landscapes San Diego 1082680”.";
+    I18N.en.s2 = "Match 7710 Balboa Ave #308 and 858-222-1454.";
+    I18N.en.s3 = "You can name Kris. Do not invent a last name — the original site does not print one.";
+    I18N.en.honest = "No email is printed on the original contact block, so none is printed here. License #1082680 may be checked at CSLB.ca.gov.";
+    I18N.es.back = "Volver a la tira";
+    I18N.es.kicker = "Después del recorrido";
+    I18N.es.h1 = "Ian H está en el sitio original. Una URL de Google no.";
+    I18N.es.lede = "quetzallandscapes.com publica la nota de Ian H nombrando a Kris. No imprime estrellas ni un enlace de reseñas de Google. Esta página no inventa ninguno. Busque el taller si la pérgola de Encinitas — o los muros, adoquines, fuego, cocina — fue suya.";
+    I18N.es.s1 = "Busque “Quetzal Landscapes San Diego 1082680”.";
+    I18N.es.s2 = "Confirme 7710 Balboa Ave #308 y 858-222-1454.";
+    I18N.es.s3 = "Puede nombrar a Kris. No invente apellido — el sitio original no imprime uno.";
+    I18N.es.honest = "El bloque de contacto original no imprime correo, así que aquí tampoco. La licencia n.º 1082680 se verifica en CSLB.ca.gov.";
+    try {
+      const saved = localStorage.getItem(LANG_KEY);
+      if (saved === "es" || saved === "en") setLang(saved);
+    } catch (_) {}
+  </script>
+</body>
+</html>
