@@ -9,10 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .rev { max-width: 720px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
+    .rev { max-width: 520px; margin: 1.4rem auto 2rem; padding: 0 var(--pad); }
     .card { background: var(--paper); border-left: 5px solid var(--ember); padding: 1.2rem; }
-    .card h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0.3rem 0 0.6rem; }
-    .honest { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--mute); border-top: 1px dashed var(--post); margin-top: 0.9rem; padding-top: 0.7rem; }
+    .card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0 0 0.4rem; }
+    .card img.qr { width: 220px; height: 220px; display: block; margin: 0.9rem auto; background: #fff; }
+    .scan { text-align: center; }
+    .actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
+    @media print {
+      .bar, .tools, .lang, .actions { display: none !important; }
+      html, body { background: #fff; }
+    }
   </style>
 </head>
 <body>
@@ -30,35 +36,31 @@
   </header>
   <main class="rev">
     <div class="card">
-      <p class="kicker" data-i18n="kicker">After the walkthrough</p>
-      <h1 data-i18n="h1">Ian H is on the original site. A Google URL is not.</h1>
-      <p data-i18n="lede">quetzallandscapes.com prints Ian H’s note naming Kris. It does not print a star count or a Google review link. This page will not invent either. Search the shop if the Encinitas pergola — or the walls, pavers, fire, kitchen — was yours.</p>
-      <ol>
-        <li data-i18n="s1">Search “Quetzal Landscapes San Diego 1082680”.</li>
-        <li data-i18n="s2">Match 7710 Balboa Ave #308 and 858-222-1454.</li>
-        <li data-i18n="s3">You can name Kris. Do not invent a last name — the original site does not print one.</li>
-      </ol>
-      <p class="honest" data-i18n="honest">No email is printed on the original contact block, so none is printed here. License #1082680 may be checked at CSLB.ca.gov.</p>
+      <h1>Quetzal Landscapes</h1>
+      <p>7710 Balboa Ave #308, San Diego, CA 92111<br>
+        CA #1082680 · <a href="tel:+18582221454">858-222-1454</a><br>
+        <a href="mailto:Info@quetzallandscapes.com">Info@quetzallandscapes.com</a>
+      </p>
+      <img class="qr" src="review-qr.svg" width="220" height="220" alt="QR code: Google search for Quetzal Landscapes San Diego">
+      <p class="scan" data-i18n="scan">Scan to find us on Google and leave a review.</p>
+      <div class="actions">
+        <button type="button" class="btn ember" id="print-card" data-i18n="printBtn">Print</button>
+        <a class="btn ghost" href="index.html" data-i18n="back2">Back to the strip</a>
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
   <script>
     I18N.en.back = "Back to the strip";
-    I18N.en.kicker = "After the walkthrough";
-    I18N.en.h1 = "Ian H is on the original site. A Google URL is not.";
-    I18N.en.lede = "quetzallandscapes.com prints Ian H’s note naming Kris. It does not print a star count or a Google review link. This page will not invent either. Search the shop if the Encinitas pergola — or the walls, pavers, fire, kitchen — was yours.";
-    I18N.en.s1 = "Search “Quetzal Landscapes San Diego 1082680”.";
-    I18N.en.s2 = "Match 7710 Balboa Ave #308 and 858-222-1454.";
-    I18N.en.s3 = "You can name Kris. Do not invent a last name — the original site does not print one.";
-    I18N.en.honest = "No email is printed on the original contact block, so none is printed here. License #1082680 may be checked at CSLB.ca.gov.";
+    I18N.en.back2 = "Back to the strip";
+    I18N.en.scan = "Scan to find us on Google and leave a review.";
+    I18N.en.printBtn = "Print";
+    I18N.en.docTitle = "Leave a review · Quetzal Landscapes";
     I18N.es.back = "Volver a la tira";
-    I18N.es.kicker = "Después del recorrido";
-    I18N.es.h1 = "Ian H está en el sitio original. Una URL de Google no.";
-    I18N.es.lede = "quetzallandscapes.com publica la nota de Ian H nombrando a Kris. No imprime estrellas ni un enlace de reseñas de Google. Esta página no inventa ninguno. Busque el taller si la pérgola de Encinitas — o los muros, adoquines, fuego, cocina — fue suya.";
-    I18N.es.s1 = "Busque “Quetzal Landscapes San Diego 1082680”.";
-    I18N.es.s2 = "Confirme 7710 Balboa Ave #308 y 858-222-1454.";
-    I18N.es.s3 = "Puede nombrar a Kris. No invente apellido — el sitio original no imprime uno.";
-    I18N.es.honest = "El bloque de contacto original no imprime correo, así que aquí tampoco. La licencia n.º 1082680 se verifica en CSLB.ca.gov.";
+    I18N.es.back2 = "Volver a la tira";
+    I18N.es.scan = "Escanee para encontrarnos en Google y dejar una reseña.";
+    I18N.es.printBtn = "Imprimir";
+    I18N.es.docTitle = "Dejar reseña · Quetzal Landscapes";
     try {
       const saved = localStorage.getItem(LANG_KEY);
       if (saved === "es" || saved === "en") setLang(saved);
