@@ -14,7 +14,7 @@ const I18N = {
     callNow: "Call 858-222-1454",
     stripK: "New project · Encinitas, Cal.",
     stripT: "Pergola, outdoor kitchen, fire features — the build strip",
-    stripLede: "The original site labels a new Encinitas project: a new pergola and outdoor kitchen, fire features and other details. The process is a sequence, not a fashion index.",
+    stripLede: "A new Encinitas project: pergola, outdoor kitchen, fire features and other details. Consult, design, approval, build, then walkthrough.",
     b1t: "Consult",
     b1b: "We send our team out to your property to estimate costs. Already know what you want? Skip ahead to approval.",
     b2t: "Design",
@@ -25,14 +25,14 @@ const I18N = {
     b4b: "The project begins. Professional crews will begin working on your property.",
     b5t: "Walkthrough",
     b5b: "We’ll walk you through your new favorite place to be: your outdoor space.",
-    figcap: "Encinitas pergola run with outdoor kitchen and fire feature — as labeled on the original site.",
+    figcap: "Encinitas pergola with outdoor kitchen and fire feature.",
     svcT: "What gets built",
     sv1: "Walls",
     sv2: "Pavers",
     sv3: "Fire features",
     sv4: "Outdoor kitchens",
     svcMore: "From designing to executing all aspects of softscape and hardscape projects. Quality, Service, and Integrity are the values carried in everything they do.",
-    qKicker: "On the original site",
+    qKicker: "Ian H",
     aboutT: "About Quetzal",
     aboutB: "We are a San Diego family-owned landscape company providing services since 2011. Dedicated to building your ideas. Striving always for the highest standards of work to transform your outdoor living space.",
     lic: "CA license #1082680",
@@ -73,7 +73,7 @@ const I18N = {
     callNow: "Llamar 858-222-1454",
     stripK: "Proyecto nuevo · Encinitas, Cal.",
     stripT: "Pérgola, cocina exterior, fuego — la tira de obra",
-    stripLede: "El sitio original etiqueta un proyecto nuevo en Encinitas: pérgola nueva y cocina exterior, elementos de fuego y otros detalles. El proceso es una secuencia, no un índice de moda.",
+    stripLede: "Un proyecto nuevo en Encinitas: pérgola, cocina exterior, elementos de fuego y otros detalles. Consulta, diseño, aprobación, construcción, recorrido.",
     b1t: "Consulta",
     b1b: "Enviamos al equipo a su propiedad para estimar costos. ¿Ya sabe lo que quiere? Pase a la aprobación.",
     b2t: "Diseño",
@@ -84,14 +84,14 @@ const I18N = {
     b4b: "Empieza el proyecto. Cuadrillas profesionales trabajan en su propiedad.",
     b5t: "Recorrido",
     b5b: "Lo recorremos por su nuevo lugar favorito: su espacio exterior.",
-    figcap: "Corrida de pérgola en Encinitas con cocina exterior y fuego — como está etiquetado en el sitio original.",
+    figcap: "Pérgola en Encinitas con cocina exterior y fuego.",
     svcT: "Qué se construye",
     sv1: "Muros",
     sv2: "Adoquines",
     sv3: "Elementos de fuego",
     sv4: "Cocinas exteriores",
     svcMore: "Del diseño a la ejecución de softscape y hardscape. Calidad, Servicio e Integridad son los valores en todo lo que hacen.",
-    qKicker: "En el sitio original",
+    qKicker: "Ian H",
     aboutT: "Acerca de Quetzal",
     aboutB: "Somos una empresa de paisaje de familia en San Diego, con servicios desde 2011. Dedicados a construir sus ideas. Siempre buscando el más alto estándar para transformar el espacio exterior.",
     lic: "Licencia CA n.º 1082680",
@@ -163,3 +163,6 @@ if (form) {
     window.location.href = SMS + "?body=" + encodeURIComponent(body);
   });
 }
+
+const printBtn = document.getElementById("print-card");
+if (printBtn) printBtn.addEventListener("click", () => window.print());
