@@ -148,7 +148,7 @@ if (form) {
     const need = (form.elements.need.value || "").trim();
     const address = (form.elements.address.value || "").trim();
     const details = (form.elements.details.value || "").trim();
-    if (!name || !need) return;
+    if (!name || !need || !address) return;
     let body = "Name: " + name + "\nNeed: " + need;
     if (address) body += "\nAddress: " + address;
     if (details) body += "\nDetails: " + details;
